@@ -1,6 +1,7 @@
 import selenium
 from selenium import webdriver
 
+
 def get_driver():
     options = webdriver.ChromeOptions()
     options.add_argument("disable-infobars")
@@ -14,9 +15,11 @@ def get_driver():
     driver.get("http://automated.pythonanywhere.com")
     return driver
 
+
 def main(driver=None):
     driver = get_driver()
     element = driver.find_element(by="xpath", value="/html/body/div[1]/div/h1[1]")
     return element.text
+
 
 print(main())
